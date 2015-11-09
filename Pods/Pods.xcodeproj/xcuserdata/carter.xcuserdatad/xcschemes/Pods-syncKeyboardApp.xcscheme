@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "797E04F698CCE2E268BD729C"
+               BlueprintIdentifier = "126B4B4886F89DE0A9993526"
                BuildableName = "libPods-syncKeyboardApp.a"
                BlueprintName = "Pods-syncKeyboardApp"
                ReferencedContainer = "container:Pods.xcodeproj">
