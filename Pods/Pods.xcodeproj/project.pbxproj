@@ -1,0 +1,621 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05D6138CFECEA16BF056391E7779AB42 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1286004CD11CFDB174848756E45FAA5E /* CFNetwork.framework */; };
+		09F83757B7E026EEBA588B38E059CCA6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28371F3CFA1922E21F493E4173C4D7DD /* Foundation.framework */; };
+		35580F58FFC5F15C5439F82F94EE7761 /* SocketIOJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = EC94DF435490FF7406D1CB01F139C007 /* SocketIOJSONSerialization.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		35C208B61BBF6BEB41327035470699D8 /* SocketIOTransportXHR.m in Sources */ = {isa = PBXBuildFile; fileRef = 480C160096A03F27B14DE8EAB42BD66E /* SocketIOTransportXHR.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		40A639F39BA0DF6E83A9B9E292C3359C /* SocketIOPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 976CB6DCAE8118193FC5DF512875F620 /* SocketIOPacket.h */; };
+		60B5616A261EFE9939CF2EBEC0721FCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28371F3CFA1922E21F493E4173C4D7DD /* Foundation.framework */; };
+		6BF0FCA17A3D96C2BF5AB210223C2831 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28371F3CFA1922E21F493E4173C4D7DD /* Foundation.framework */; };
+		716933A7E19D5DCC1D435D7C333F0E29 /* SocketIOTransport.h in Headers */ = {isa = PBXBuildFile; fileRef = D9ACA5BE666C8342C0F633AF849193EE /* SocketIOTransport.h */; };
+		7186889001D57DDC1D698105A3E7F448 /* Pods-syncKeyboardApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 521F5F92A9C5BD2C3EA4662D5A9A5BBB /* Pods-syncKeyboardApp-dummy.m */; };
+		73447077AE963EBE6A688607DF62E6E0 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = E4961EB107D693CDAE1CA4057605A045 /* SRWebSocket.m */; };
+		736425D113EC8A8E06E9EB9EE5DB9007 /* SocketIOTransportWebsocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 07CAABBAB2894C300009CC0768BDB7FE /* SocketIOTransportWebsocket.h */; };
+		7C7FEB094D7EBE0B4459B8AACD4ABC90 /* SocketRocket-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF3ADA90C458547515537DD8F2DEE26 /* SocketRocket-dummy.m */; };
+		81BBDE2486ABA9597716332B94A35E72 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB51A5DB9DB62A680985217DA01059BE /* Security.framework */; };
+		82345327D1560970A0A60AB01FBAC5E4 /* SocketIO.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EA6C0B71C4BEAE7F16CD9EBA68A67C /* SocketIO.h */; };
+		AA5308E34A0CAA48EC50574B4F092AB2 /* SRWebSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = F9E9FD7BB44AA1E355DF2A491EB45D57 /* SRWebSocket.h */; };
+		B5BD35C1001CBB7C4798D54794086001 /* SocketIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C065AF0369040C9BE2F074F4604A32D /* SocketIO.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		D827DE9FDBCACAB3CA37389C7FAF7022 /* SocketIOTransportXHR.h in Headers */ = {isa = PBXBuildFile; fileRef = 11669D14C36B2ADB8C633AF7EFC36C49 /* SocketIOTransportXHR.h */; };
+		ED9BB3AB7ED96E55F6332419ADAB55FB /* SocketIOPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CA5707D271BFE5D40B22FFEAC3D23B /* SocketIOPacket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F15ECBB132A550D838B34462DD8E5D03 /* socket.IO-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C20A3713DF5071DABD7DC24D48745E4F /* socket.IO-dummy.m */; };
+		F7E12A5749E451E4082C998B31322802 /* SocketIOTransportWebsocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 584CCFBCBED8BEF4EAD8F9B2F8579734 /* SocketIOTransportWebsocket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F8FF3A20B14D56020918886CAA4AA22C /* SocketIOJSONSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BB1ABDCD7602BFF77AB036F868E386A /* SocketIOJSONSerialization.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2090292F8A963BB5D7728602B8226714 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 74CA65FDA14057C40BC72E59F07E8324;
+			remoteInfo = socket.IO;
+		};
+		26D229DD78662EC44FEC19144BD084A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E829047417BE8FC3B7DADF9B432DF02A;
+			remoteInfo = SocketRocket;
+		};
+		4856CC56D060A67E64F38412913FD8A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E829047417BE8FC3B7DADF9B432DF02A;
+			remoteInfo = SocketRocket;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07CAABBAB2894C300009CC0768BDB7FE /* SocketIOTransportWebsocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SocketIOTransportWebsocket.h; sourceTree = "<group>"; };
+		0ED23B6C5AA55B992B3BE2B87684BDA5 /* SocketRocket.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SocketRocket.xcconfig; sourceTree = "<group>"; };
+		11669D14C36B2ADB8C633AF7EFC36C49 /* SocketIOTransportXHR.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SocketIOTransportXHR.h; sourceTree = "<group>"; };
+		1286004CD11CFDB174848756E45FAA5E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		19D10C9F93D94174A9ECEBE48654C53F /* socket.IO-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "socket.IO-Private.xcconfig"; sourceTree = "<group>"; };
+		28371F3CFA1922E21F493E4173C4D7DD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		2C065AF0369040C9BE2F074F4604A32D /* SocketIO.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SocketIO.m; sourceTree = "<group>"; };
+		30F8176F47630DCAF69F1D3F9C7947E0 /* SocketRocket-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-prefix.pch"; sourceTree = "<group>"; };
+		3D5A4A81DFDDE3B4DD49EE933F85862B /* Pods-syncKeyboardApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-syncKeyboardApp.debug.xcconfig"; sourceTree = "<group>"; };
+		480C160096A03F27B14DE8EAB42BD66E /* SocketIOTransportXHR.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SocketIOTransportXHR.m; sourceTree = "<group>"; };
+		521F5F92A9C5BD2C3EA4662D5A9A5BBB /* Pods-syncKeyboardApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-syncKeyboardApp-dummy.m"; sourceTree = "<group>"; };
+		5471F74F4A130AF098CADA75194AD23E /* socket.IO.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = socket.IO.xcconfig; sourceTree = "<group>"; };
+		584CCFBCBED8BEF4EAD8F9B2F8579734 /* SocketIOTransportWebsocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SocketIOTransportWebsocket.m; sourceTree = "<group>"; };
+		62CA5707D271BFE5D40B22FFEAC3D23B /* SocketIOPacket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SocketIOPacket.m; sourceTree = "<group>"; };
+		6D5FBA9436A5C0DBEC781F540BEF34ED /* socket.IO-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "socket.IO-prefix.pch"; sourceTree = "<group>"; };
+		73B303425183815DDB78802EC9E32F8E /* Pods-syncKeyboardApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-syncKeyboardApp-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7BB1ABDCD7602BFF77AB036F868E386A /* SocketIOJSONSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SocketIOJSONSerialization.h; sourceTree = "<group>"; };
+		830D5632F3E99F46F2090D8CB17D23A3 /* libsocket.IO.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libsocket.IO.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D42D4F1ABA961C63F7F6313B07AFB80 /* Pods-syncKeyboardApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-syncKeyboardApp-acknowledgements.plist"; sourceTree = "<group>"; };
+		940C6A27D8985045FAEBC648267EA45D /* libSocketRocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSocketRocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		976CB6DCAE8118193FC5DF512875F620 /* SocketIOPacket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SocketIOPacket.h; sourceTree = "<group>"; };
+		9CC98953ED37BBF00C4AB1BCA5455751 /* SocketRocket-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SocketRocket-Private.xcconfig"; sourceTree = "<group>"; };
+		A0EA6C0B71C4BEAE7F16CD9EBA68A67C /* SocketIO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SocketIO.h; sourceTree = "<group>"; };
+		B1BDBBB7BA60DE2281F2DEAEC11B88E3 /* Pods-syncKeyboardApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-syncKeyboardApp-resources.sh"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BB51A5DB9DB62A680985217DA01059BE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		BBF3ADA90C458547515537DD8F2DEE26 /* SocketRocket-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SocketRocket-dummy.m"; sourceTree = "<group>"; };
+		C20A3713DF5071DABD7DC24D48745E4F /* socket.IO-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "socket.IO-dummy.m"; sourceTree = "<group>"; };
+		D9ACA5BE666C8342C0F633AF849193EE /* SocketIOTransport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SocketIOTransport.h; sourceTree = "<group>"; };
+		DEA51A1608347435D685CA42FCC3C704 /* Pods-syncKeyboardApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-syncKeyboardApp.release.xcconfig"; sourceTree = "<group>"; };
+		E4961EB107D693CDAE1CA4057605A045 /* SRWebSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SRWebSocket.m; path = SocketRocket/SRWebSocket.m; sourceTree = "<group>"; };
+		EC94DF435490FF7406D1CB01F139C007 /* SocketIOJSONSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SocketIOJSONSerialization.m; sourceTree = "<group>"; };
+		ECC526515A85AA29B08108B56202E233 /* libPods-syncKeyboardApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-syncKeyboardApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9E9FD7BB44AA1E355DF2A491EB45D57 /* SRWebSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SRWebSocket.h; path = SocketRocket/SRWebSocket.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6B1640FED398B5E2F3FECCB9C2B2C77E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05D6138CFECEA16BF056391E7779AB42 /* CFNetwork.framework in Frameworks */,
+				6BF0FCA17A3D96C2BF5AB210223C2831 /* Foundation.framework in Frameworks */,
+				81BBDE2486ABA9597716332B94A35E72 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B78EB4DF2CD70E5467B334855A2483C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09F83757B7E026EEBA588B38E059CCA6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C68A55D11B4FCA509C8492780DECE60F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60B5616A261EFE9939CF2EBEC0721FCE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ECD260DD19B725A7615428234008C004 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3E72E3DAA7C1BCCF72CC05BDAA33D9E3 /* socket.IO */ = {
+			isa = PBXGroup;
+			children = (
+				A0EA6C0B71C4BEAE7F16CD9EBA68A67C /* SocketIO.h */,
+				2C065AF0369040C9BE2F074F4604A32D /* SocketIO.m */,
+				7BB1ABDCD7602BFF77AB036F868E386A /* SocketIOJSONSerialization.h */,
+				EC94DF435490FF7406D1CB01F139C007 /* SocketIOJSONSerialization.m */,
+				976CB6DCAE8118193FC5DF512875F620 /* SocketIOPacket.h */,
+				62CA5707D271BFE5D40B22FFEAC3D23B /* SocketIOPacket.m */,
+				D9ACA5BE666C8342C0F633AF849193EE /* SocketIOTransport.h */,
+				07CAABBAB2894C300009CC0768BDB7FE /* SocketIOTransportWebsocket.h */,
+				584CCFBCBED8BEF4EAD8F9B2F8579734 /* SocketIOTransportWebsocket.m */,
+				11669D14C36B2ADB8C633AF7EFC36C49 /* SocketIOTransportXHR.h */,
+				480C160096A03F27B14DE8EAB42BD66E /* SocketIOTransportXHR.m */,
+				D25F9721544DBB523FAFF58AE25BFC9D /* Support Files */,
+			);
+			path = socket.IO;
+			sourceTree = "<group>";
+		};
+		42BD6138D363C698B42D1B2167B690AE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0ED23B6C5AA55B992B3BE2B87684BDA5 /* SocketRocket.xcconfig */,
+				9CC98953ED37BBF00C4AB1BCA5455751 /* SocketRocket-Private.xcconfig */,
+				BBF3ADA90C458547515537DD8F2DEE26 /* SocketRocket-dummy.m */,
+				30F8176F47630DCAF69F1D3F9C7947E0 /* SocketRocket-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SocketRocket";
+			sourceTree = "<group>";
+		};
+		759B49D7C30E2B77E176CA8927072B1F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AE19D23068264AAFE4ED55558DD041FC /* SocketRocket */,
+				3E72E3DAA7C1BCCF72CC05BDAA33D9E3 /* socket.IO */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		79687DEB0652DA2CB42080FD5EF82548 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A979572EE9562E72CD24A7A89EABC630 /* Pods-syncKeyboardApp */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
+				759B49D7C30E2B77E176CA8927072B1F /* Pods */,
+				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				79687DEB0652DA2CB42080FD5EF82548 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A979572EE9562E72CD24A7A89EABC630 /* Pods-syncKeyboardApp */ = {
+			isa = PBXGroup;
+			children = (
+				73B303425183815DDB78802EC9E32F8E /* Pods-syncKeyboardApp-acknowledgements.markdown */,
+				8D42D4F1ABA961C63F7F6313B07AFB80 /* Pods-syncKeyboardApp-acknowledgements.plist */,
+				521F5F92A9C5BD2C3EA4662D5A9A5BBB /* Pods-syncKeyboardApp-dummy.m */,
+				B1BDBBB7BA60DE2281F2DEAEC11B88E3 /* Pods-syncKeyboardApp-resources.sh */,
+				3D5A4A81DFDDE3B4DD49EE933F85862B /* Pods-syncKeyboardApp.debug.xcconfig */,
+				DEA51A1608347435D685CA42FCC3C704 /* Pods-syncKeyboardApp.release.xcconfig */,
+			);
+			name = "Pods-syncKeyboardApp";
+			path = "Target Support Files/Pods-syncKeyboardApp";
+			sourceTree = "<group>";
+		};
+		AE19D23068264AAFE4ED55558DD041FC /* SocketRocket */ = {
+			isa = PBXGroup;
+			children = (
+				F9E9FD7BB44AA1E355DF2A491EB45D57 /* SRWebSocket.h */,
+				E4961EB107D693CDAE1CA4057605A045 /* SRWebSocket.m */,
+				42BD6138D363C698B42D1B2167B690AE /* Support Files */,
+			);
+			path = SocketRocket;
+			sourceTree = "<group>";
+		};
+		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ECC526515A85AA29B08108B56202E233 /* libPods-syncKeyboardApp.a */,
+				940C6A27D8985045FAEBC648267EA45D /* libSocketRocket.a */,
+				830D5632F3E99F46F2090D8CB17D23A3 /* libsocket.IO.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D25F9721544DBB523FAFF58AE25BFC9D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5471F74F4A130AF098CADA75194AD23E /* socket.IO.xcconfig */,
+				19D10C9F93D94174A9ECEBE48654C53F /* socket.IO-Private.xcconfig */,
+				C20A3713DF5071DABD7DC24D48745E4F /* socket.IO-dummy.m */,
+				6D5FBA9436A5C0DBEC781F540BEF34ED /* socket.IO-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/socket.IO";
+			sourceTree = "<group>";
+		};
+		ECD260DD19B725A7615428234008C004 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				1286004CD11CFDB174848756E45FAA5E /* CFNetwork.framework */,
+				28371F3CFA1922E21F493E4173C4D7DD /* Foundation.framework */,
+				BB51A5DB9DB62A680985217DA01059BE /* Security.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1BCCDA9D9A086E05F56865AC80D60267 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82345327D1560970A0A60AB01FBAC5E4 /* SocketIO.h in Headers */,
+				F8FF3A20B14D56020918886CAA4AA22C /* SocketIOJSONSerialization.h in Headers */,
+				40A639F39BA0DF6E83A9B9E292C3359C /* SocketIOPacket.h in Headers */,
+				716933A7E19D5DCC1D435D7C333F0E29 /* SocketIOTransport.h in Headers */,
+				736425D113EC8A8E06E9EB9EE5DB9007 /* SocketIOTransportWebsocket.h in Headers */,
+				D827DE9FDBCACAB3CA37389C7FAF7022 /* SocketIOTransportXHR.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8470A67A210AB6B0004A80C7EA93D931 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA5308E34A0CAA48EC50574B4F092AB2 /* SRWebSocket.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		604A2C19CF7AAA6F77B1B8C3329CAC6E /* Pods-syncKeyboardApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D202D6A9DF4538F423ECEA2EA04E3A9 /* Build configuration list for PBXNativeTarget "Pods-syncKeyboardApp" */;
+			buildPhases = (
+				0E39D77AF6EFC164B42B715FA0146540 /* Sources */,
+				B78EB4DF2CD70E5467B334855A2483C2 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9BF800A41E8A649CD7FA90DA4F785557 /* PBXTargetDependency */,
+				DB2187DBBE2B388B23F0A7DFE9F0C119 /* PBXTargetDependency */,
+			);
+			name = "Pods-syncKeyboardApp";
+			productName = "Pods-syncKeyboardApp";
+			productReference = ECC526515A85AA29B08108B56202E233 /* libPods-syncKeyboardApp.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		74CA65FDA14057C40BC72E59F07E8324 /* socket.IO */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 401227E91C3CFBB2E173D10B84C74C80 /* Build configuration list for PBXNativeTarget "socket.IO" */;
+			buildPhases = (
+				ABE1DAC22E9B4DB15581D081A1176CE9 /* Sources */,
+				C68A55D11B4FCA509C8492780DECE60F /* Frameworks */,
+				1BCCDA9D9A086E05F56865AC80D60267 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2BBC221E3A23C0640354B20593CB2AAE /* PBXTargetDependency */,
+			);
+			name = socket.IO;
+			productName = socket.IO;
+			productReference = 830D5632F3E99F46F2090D8CB17D23A3 /* libsocket.IO.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E829047417BE8FC3B7DADF9B432DF02A /* SocketRocket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33F81AFC421E75A0D982C9CD081AD9A9 /* Build configuration list for PBXNativeTarget "SocketRocket" */;
+			buildPhases = (
+				B298768742ACDD3AF71D8222507E4666 /* Sources */,
+				6B1640FED398B5E2F3FECCB9C2B2C77E /* Frameworks */,
+				8470A67A210AB6B0004A80C7EA93D931 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SocketRocket;
+			productName = SocketRocket;
+			productReference = 940C6A27D8985045FAEBC648267EA45D /* libSocketRocket.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				604A2C19CF7AAA6F77B1B8C3329CAC6E /* Pods-syncKeyboardApp */,
+				E829047417BE8FC3B7DADF9B432DF02A /* SocketRocket */,
+				74CA65FDA14057C40BC72E59F07E8324 /* socket.IO */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0E39D77AF6EFC164B42B715FA0146540 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7186889001D57DDC1D698105A3E7F448 /* Pods-syncKeyboardApp-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABE1DAC22E9B4DB15581D081A1176CE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5BD35C1001CBB7C4798D54794086001 /* SocketIO.m in Sources */,
+				35580F58FFC5F15C5439F82F94EE7761 /* SocketIOJSONSerialization.m in Sources */,
+				ED9BB3AB7ED96E55F6332419ADAB55FB /* SocketIOPacket.m in Sources */,
+				F7E12A5749E451E4082C998B31322802 /* SocketIOTransportWebsocket.m in Sources */,
+				35C208B61BBF6BEB41327035470699D8 /* SocketIOTransportXHR.m in Sources */,
+				F15ECBB132A550D838B34462DD8E5D03 /* socket.IO-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B298768742ACDD3AF71D8222507E4666 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73447077AE963EBE6A688607DF62E6E0 /* SRWebSocket.m in Sources */,
+				7C7FEB094D7EBE0B4459B8AACD4ABC90 /* SocketRocket-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2BBC221E3A23C0640354B20593CB2AAE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SocketRocket;
+			target = E829047417BE8FC3B7DADF9B432DF02A /* SocketRocket */;
+			targetProxy = 4856CC56D060A67E64F38412913FD8A1 /* PBXContainerItemProxy */;
+		};
+		9BF800A41E8A649CD7FA90DA4F785557 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SocketRocket;
+			target = E829047417BE8FC3B7DADF9B432DF02A /* SocketRocket */;
+			targetProxy = 26D229DD78662EC44FEC19144BD084A6 /* PBXContainerItemProxy */;
+		};
+		DB2187DBBE2B388B23F0A7DFE9F0C119 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = socket.IO;
+			target = 74CA65FDA14057C40BC72E59F07E8324 /* socket.IO */;
+			targetProxy = 2090292F8A963BB5D7728602B8226714 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2621638DFE5F70EF00275D8851A18B7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19D10C9F93D94174A9ECEBE48654C53F /* socket.IO-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/socket.IO/socket.IO-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4AFA35A82AF847078E78E14062C5C7D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEA51A1608347435D685CA42FCC3C704 /* Pods-syncKeyboardApp.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		562CCDBBB7381EBF20F0F7C8FFF1CAF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CC98953ED37BBF00C4AB1BCA5455751 /* SocketRocket-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SocketRocket/SocketRocket-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		56FA995A4EF5C78E2EA6A311038EC84F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CC98953ED37BBF00C4AB1BCA5455751 /* SocketRocket-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SocketRocket/SocketRocket-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		68E1976437368D96C1955D65B25AC4FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D5A4A81DFDDE3B4DD49EE933F85862B /* Pods-syncKeyboardApp.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		F579308C6F291CC7D0D60F250D0051DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19D10C9F93D94174A9ECEBE48654C53F /* socket.IO-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/socket.IO/socket.IO-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
+				FB45FFD90572718D82AB9092B750F0CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33F81AFC421E75A0D982C9CD081AD9A9 /* Build configuration list for PBXNativeTarget "SocketRocket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56FA995A4EF5C78E2EA6A311038EC84F /* Debug */,
+				562CCDBBB7381EBF20F0F7C8FFF1CAF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		401227E91C3CFBB2E173D10B84C74C80 /* Build configuration list for PBXNativeTarget "socket.IO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2621638DFE5F70EF00275D8851A18B7C /* Debug */,
+				F579308C6F291CC7D0D60F250D0051DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D202D6A9DF4538F423ECEA2EA04E3A9 /* Build configuration list for PBXNativeTarget "Pods-syncKeyboardApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68E1976437368D96C1955D65B25AC4FF /* Debug */,
+				4AFA35A82AF847078E78E14062C5C7D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
