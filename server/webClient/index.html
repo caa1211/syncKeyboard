@@ -10,24 +10,53 @@
 		
 
 <div style="margin: 10px;">
-		<span id="result">AA</span>
+	<!--button id="btn"> send msg </button-->
+	<input id="inputBox" style="width:100px; height:50px; border: solid 1px blue;">
+	<div id="result"> </div>
 </div>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.17/socket.io.min.js"></script>
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
 <script>
-var socket = io.connect('http://localhost');
+var socketServer = 'http://believeweave.corp.gq1.yahoo.com:3001';
+var socket = io.connect(socketServer);
+var roomName = "my room";
+ var count = 0;
 
   socket.on('connect', function () {
 
+    socket.emit('set nickname', "caa");
+
      socket.on('ready', function () {
-      console.log('Connected !');
-      socket.emit('msg', 'my test client message');
+
+       console.log('Connected !');
+       socket.emit('joinRoom', roomName);
+
      });
+
+     socket.on('receiveMsg', function (param) {
+       //count = parseInt(param.split(",")[1], 10);
+       $("#result").html(param.data);
+     });
+
   });
 
  
+$("#inputBox").bind('input',function(event) {
+
+	var text = $(this).val();
+	
+	socket.emit('sendMsg', {room:"my room", data: text});
+});
+
+$("#btn").click(function(){
+	count ++;
+	$("#result").html(count);
+    socket.emit('sendMsg', {room:"my room", data: count});
+});
+
+
 
 </script>
 	</body>
