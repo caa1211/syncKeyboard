@@ -13,7 +13,33 @@
 		028D17091BF0D53400042DCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 028D17071BF0D53400042DCD /* Main.storyboard */; };
 		028D170B1BF0D53400042DCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 028D170A1BF0D53400042DCD /* Assets.xcassets */; };
 		028D170E1BF0D53400042DCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 028D170C1BF0D53400042DCD /* LaunchScreen.storyboard */; };
+		028D171D1BF0D57900042DCD /* KeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 028D171C1BF0D57900042DCD /* KeyboardViewController.m */; };
+		028D17211BF0D57900042DCD /* syncKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 028D17191BF0D57900042DCD /* syncKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		028D171F1BF0D57900042DCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 028D16F31BF0D53400042DCD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 028D17181BF0D57900042DCD;
+			remoteInfo = syncKeyboard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		028D17251BF0D57900042DCD /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				028D17211BF0D57900042DCD /* syncKeyboard.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		028D16FB1BF0D53400042DCD /* syncKeyboardApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = syncKeyboardApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,10 +52,21 @@
 		028D170A1BF0D53400042DCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		028D170D1BF0D53400042DCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		028D170F1BF0D53400042DCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		028D17191BF0D57900042DCD /* syncKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = syncKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		028D171B1BF0D57900042DCD /* KeyboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardViewController.h; sourceTree = "<group>"; };
+		028D171C1BF0D57900042DCD /* KeyboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardViewController.m; sourceTree = "<group>"; };
+		028D171E1BF0D57900042DCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		028D16F81BF0D53400042DCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		028D17161BF0D57900042DCD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				028D16FD1BF0D53400042DCD /* syncKeyboardApp */,
+				028D171A1BF0D57900042DCD /* syncKeyboard */,
 				028D16FC1BF0D53400042DCD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				028D16FB1BF0D53400042DCD /* syncKeyboardApp.app */,
+				028D17191BF0D57900042DCD /* syncKeyboard.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,6 +118,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		028D171A1BF0D57900042DCD /* syncKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				028D171B1BF0D57900042DCD /* KeyboardViewController.h */,
+				028D171C1BF0D57900042DCD /* KeyboardViewController.m */,
+				028D171E1BF0D57900042DCD /* Info.plist */,
+			);
+			path = syncKeyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,15 +138,34 @@
 				028D16F71BF0D53400042DCD /* Sources */,
 				028D16F81BF0D53400042DCD /* Frameworks */,
 				028D16F91BF0D53400042DCD /* Resources */,
+				028D17251BF0D57900042DCD /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				028D17201BF0D57900042DCD /* PBXTargetDependency */,
 			);
 			name = syncKeyboardApp;
 			productName = syncKeyboardApp;
 			productReference = 028D16FB1BF0D53400042DCD /* syncKeyboardApp.app */;
 			productType = "com.apple.product-type.application";
+		};
+		028D17181BF0D57900042DCD /* syncKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 028D17221BF0D57900042DCD /* Build configuration list for PBXNativeTarget "syncKeyboard" */;
+			buildPhases = (
+				028D17151BF0D57900042DCD /* Sources */,
+				028D17161BF0D57900042DCD /* Frameworks */,
+				028D17171BF0D57900042DCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = syncKeyboard;
+			productName = syncKeyboard;
+			productReference = 028D17191BF0D57900042DCD /* syncKeyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -109,6 +177,9 @@
 				ORGANIZATIONNAME = yahoo;
 				TargetAttributes = {
 					028D16FA1BF0D53400042DCD = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					028D17181BF0D57900042DCD = {
 						CreatedOnToolsVersion = 7.0.1;
 					};
 				};
@@ -127,6 +198,7 @@
 			projectRoot = "";
 			targets = (
 				028D16FA1BF0D53400042DCD /* syncKeyboardApp */,
+				028D17181BF0D57900042DCD /* syncKeyboard */,
 			);
 		};
 /* End PBXProject section */
@@ -139,6 +211,13 @@
 				028D170E1BF0D53400042DCD /* LaunchScreen.storyboard in Resources */,
 				028D170B1BF0D53400042DCD /* Assets.xcassets in Resources */,
 				028D17091BF0D53400042DCD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		028D17171BF0D57900042DCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,7 +234,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		028D17151BF0D57900042DCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				028D171D1BF0D57900042DCD /* KeyboardViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		028D17201BF0D57900042DCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 028D17181BF0D57900042DCD /* syncKeyboard */;
+			targetProxy = 028D171F1BF0D57900042DCD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		028D17071BF0D53400042DCD /* Main.storyboard */ = {
@@ -281,6 +376,28 @@
 			};
 			name = Release;
 		};
+		028D17231BF0D57900042DCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = syncKeyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yahoo.syncKeyboardApp.syncKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		028D17241BF0D57900042DCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = syncKeyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yahoo.syncKeyboardApp.syncKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -298,6 +415,14 @@
 			buildConfigurations = (
 				028D17131BF0D53400042DCD /* Debug */,
 				028D17141BF0D53400042DCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		028D17221BF0D57900042DCD /* Build configuration list for PBXNativeTarget "syncKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				028D17231BF0D57900042DCD /* Debug */,
+				028D17241BF0D57900042DCD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
