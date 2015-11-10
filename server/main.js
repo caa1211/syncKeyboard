@@ -42,5 +42,10 @@ io.sockets.on('connection', function(socket, aaa){
     socket.broadcast.to(param.room).emit('receiveMsg', param); 
   });
 
+   socket.on('sendCtlMsg', function (param) {
+        console.log("sendCtlMsg to room", param.room);
+        socket.broadcast.to(param.room).emit('receiveCtrlMsg', param);
+   });
+
 });
 

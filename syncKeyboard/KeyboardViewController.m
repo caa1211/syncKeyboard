@@ -101,20 +101,33 @@
 // event delegate
 - (void) socketIO:(SocketIO *)socket didReceiveEvent:(SocketIOPacket *)packet
 {
+    NSString *msgName = packet.name;
+    NSString *remoteInput = packet.args[0][@"data"];
+    if ( [msgName isEqualToString:@"receiveMsg"] ) {
+        [self receiveKey:remoteInput];
+    }else if ([msgName isEqualToString:@"receiveCtrlMsg"]) {
+        [self receiveCtrlKey:remoteInput];
+    }
+
+}
+
+-(void) receiveKey:(NSString*)remoteInput {
     while (self.textDocumentProxy.hasText==YES)
     {
         [self.textDocumentProxy deleteBackward];
     }
-    
-    NSString *remoteInput = packet.args[0][@"data"];
     self.debugLabel.text = remoteInput;
-    NSLog(@"didReceiveEvent >>> data: %@", packet.data);
-    
-   
+    NSLog(@"didReceiveEvent >>> data: %@", remoteInput);
     [self.textDocumentProxy insertText:remoteInput];
-    
 }
 
+-(void) receiveCtrlKey:(NSString*)remoteInput {
+    if ([remoteInput isEqualToString:@"return"]) {
+        [self.textDocumentProxy insertText:@"\n"];
+        
+    }
+
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated

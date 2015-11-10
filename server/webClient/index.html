@@ -44,16 +44,20 @@ var roomName = "my room";
 
  
 $("#inputBox").bind('input',function(event) {
-
 	var text = $(this).val();
-	
-	socket.emit('sendMsg', {room:"my room", data: text});
+	socket.emit('sendMsg', {room: roomName, data: text});
+});
+
+$("#inputBox").bind('keyup',function(event) {
+    if(event.keyCode == 13){
+        socket.emit('sendCtlMsg', {room: roomName, data: "return"});
+    }
 });
 
 $("#btn").click(function(){
 	count ++;
 	$("#result").html(count);
-    socket.emit('sendMsg', {room:"my room", data: count});
+    socket.emit('sendMsg', {room: roomName, data: count});
 });
 
 
