@@ -12,7 +12,7 @@
 
 @interface KeyboardViewController () <SocketIODelegate>
 @property (weak, nonatomic) IBOutlet UILabel *debugLabel;
-
+@property (weak, nonatomic) IBOutlet UILabel *codeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *nextKeyboard;
 @property (weak, nonatomic) IBOutlet UIImageView *statusImage;
 @property (weak, nonatomic) IBOutlet UIButton *retryButton;
@@ -45,7 +45,7 @@ typedef NS_ENUM(NSInteger, CntSt) {
                                     toItem: nil
                                  attribute: NSLayoutAttributeNotAnAttribute
                                 multiplier: 0.0
-                                  constant: 70];
+                                  constant: 60];
     [self.view addConstraint: heightConstraint];
     
 }
@@ -65,7 +65,9 @@ typedef NS_ENUM(NSInteger, CntSt) {
     
     [self.nextKeyboard addTarget:self action:@selector(advanceToNextInputMode) forControlEvents:UIControlEventTouchUpInside];
     [self connectionStatusChange:CntSt_NO];
+    self.retryButton.hidden = NO;
     [self setupSocketio];
+    self.codeLabel.text = @"A029";
 }
 
 - (void) setupSocketio {
@@ -105,6 +107,7 @@ typedef NS_ENUM(NSInteger, CntSt) {
 
 - (void) socketIO:(SocketIO *)socket onError:(NSError *)error{
     [self connectionStatusChange:CntSt_NO];
+    self.retryButton.hidden = NO;
 }
 
 - (void) socketIO:(SocketIO *)socket didReceiveMessage:(SocketIOPacket *)packet
@@ -129,7 +132,6 @@ typedef NS_ENUM(NSInteger, CntSt) {
 - (void) connectionStatusChange:(CntSt)st {
     if(st == CntSt_NO){
         [self.statusImage setBackgroundColor:[UIColor redColor]];
-        self.retryButton.hidden = NO;
     }else if (st == CntSt_JOINING){
         [self.statusImage setBackgroundColor:[UIColor yellowColor]];
     }else if (st == CntSt_OK){
