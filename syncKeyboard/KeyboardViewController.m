@@ -65,7 +65,7 @@ typedef NS_ENUM(NSInteger, CntSt) {
     
     [self.nextKeyboard addTarget:self action:@selector(advanceToNextInputMode) forControlEvents:UIControlEventTouchUpInside];
     [self connectionStatusChange:CntSt_NO];
-    self.retryButton.hidden = NO;
+    self.retryButton.hidden = YES;
     [self setupSocketio];
     self.codeLabel.text = @"A029";
 }
