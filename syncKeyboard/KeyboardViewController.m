@@ -12,36 +12,59 @@
 
 @interface KeyboardViewController () <SocketIODelegate>
 @property (weak, nonatomic) IBOutlet UILabel *debugLabel;
-@property (nonatomic, strong) UIButton *nextKeyboardButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *nextKeyboard;
+@property (weak, nonatomic) IBOutlet UIImageView *statusImage;
+@property (weak, nonatomic) IBOutlet UIButton *retryButton;
 @property (nonatomic, strong) SocketIO *socketIO;
+@property (nonatomic, strong) NSString *roomName;
 @end
+
+typedef NS_ENUM(NSInteger, CntSt) {
+    CntSt_NO = 0,
+    CntSt_JOINING,
+    CntSt_OK
+};
+
 
 @implementation KeyboardViewController
 
 - (void)updateViewConstraints {
     [super updateViewConstraints];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
-    // Add custom view sizing constraints here
+    NSLog(@"============Custom height===============");
+    
+    NSLayoutConstraint *heightConstraint =
+    [NSLayoutConstraint constraintWithItem: self.view
+                                 attribute: NSLayoutAttributeHeight
+                                 relatedBy: NSLayoutRelationEqual
+                                    toItem: nil
+                                 attribute: NSLayoutAttributeNotAnAttribute
+                                multiplier: 0.0
+                                  constant: 70];
+    [self.view addConstraint: heightConstraint];
+    
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    [self.socketIO sendEvent:@"leaveRoom" withData:self.roomName];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Perform custom UI setup here
-    self.nextKeyboardButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    NSString *uniqueIdentifier = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    NSLog(@"uniqueIdentifier %@", uniqueIdentifier);
+    self.roomName = @"my room";
     
-    [self.nextKeyboardButton setTitle:NSLocalizedString(@"Next 4", @"Title for 'Next Keyboard' button") forState:UIControlStateNormal];
-    [self.nextKeyboardButton sizeToFit];
-    self.nextKeyboardButton.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    [self.nextKeyboardButton addTarget:self action:@selector(advanceToNextInputMode) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:self.nextKeyboardButton];
-    
-    NSLayoutConstraint *nextKeyboardButtonLeftSideConstraint = [NSLayoutConstraint constraintWithItem:self.nextKeyboardButton attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0.0];
-    NSLayoutConstraint *nextKeyboardButtonBottomConstraint = [NSLayoutConstraint constraintWithItem:self.nextKeyboardButton attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0];
-    [self.view addConstraints:@[nextKeyboardButtonLeftSideConstraint, nextKeyboardButtonBottomConstraint]];
-    
+    [self.nextKeyboard addTarget:self action:@selector(advanceToNextInputMode) forControlEvents:UIControlEventTouchUpInside];
+    [self connectionStatusChange:CntSt_NO];
     [self setupSocketio];
 }
 
@@ -51,22 +74,10 @@
     self.socketIO.delegate = self;
     //[socketIO connectToHost:@"believeweave.corp.gq1.yahoo.com" onPort:3000 withParams:@{@"auth_token":@"1234"}];
     [self.socketIO connectToHost:socketServer onPort:3001];
-    //self.debugLabel.text = @"00";
 }
 
-- (IBAction)onBtnClick:(id)sender {
-    [self.socketIO sendEvent:@"sendMsg" withData:@{@"room": @"my room", @"data": @"ooo"}];
-}
+# if 0 // Unused code
 
-
-- (void) socketIODidConnect:(SocketIO *)socket{
-    self.debugLabel.text = @"a"; //v
-    
-    [self.socketIO sendEvent:@"joinRoom" withData:@"my room"];
-}
-- (void) socketIODidDisconnect:(SocketIO *)socket disconnectedWithError:(NSError *)error{
-    self.debugLabel.text = @"b";
-}
 
 - (void) socketIO:(SocketIO *)socket didReceiveJSON:(SocketIOPacket *)packet{
     self.debugLabel.text = @"c";
@@ -74,10 +85,26 @@
 
 - (void) socketIO:(SocketIO *)socket didSendMessage:(SocketIOPacket *)packet{
     //self.debugLabel.text = @"d"; //v
-    
 }
+#endif
+- (IBAction)onRetry:(id)sender {
+    //[self.socketIO sendEvent:@"sendMsg" withData:@{@"room": self.roomName, @"data": @"ooo"}];
+    // do retry
+    [self setupSocketio];
+}
+
+- (void) socketIODidConnect:(SocketIO *)socket{
+    [self connectionStatusChange:CntSt_JOINING];
+    [self.socketIO sendEvent:@"joinRoom" withData: self.roomName];
+}
+
+- (void) socketIODidDisconnect:(SocketIO *)socket disconnectedWithError:(NSError *)error{
+    [self connectionStatusChange:CntSt_NO];
+}
+
+
 - (void) socketIO:(SocketIO *)socket onError:(NSError *)error{
-    self.debugLabel.text = @"e"; //v
+    [self connectionStatusChange:CntSt_NO];
 }
 
 - (void) socketIO:(SocketIO *)socket didReceiveMessage:(SocketIOPacket *)packet
@@ -98,6 +125,19 @@
     return listItems.lastObject;
 }
 
+
+- (void) connectionStatusChange:(CntSt)st {
+    if(st == CntSt_NO){
+        [self.statusImage setBackgroundColor:[UIColor redColor]];
+        self.retryButton.hidden = NO;
+    }else if (st == CntSt_JOINING){
+        [self.statusImage setBackgroundColor:[UIColor yellowColor]];
+    }else if (st == CntSt_OK){
+        [self.statusImage setBackgroundColor:[UIColor greenColor]];
+        self.retryButton.hidden = YES;
+    }
+}
+
 // event delegate
 - (void) socketIO:(SocketIO *)socket didReceiveEvent:(SocketIOPacket *)packet
 {
@@ -107,6 +147,8 @@
         [self receiveKey:remoteInput];
     }else if ([msgName isEqualToString:@"receiveCtrlMsg"]) {
         [self receiveCtrlKey:remoteInput];
+    }else if ([msgName isEqualToString:@"roomJoined"]) {
+        [self connectionStatusChange:CntSt_OK];
     }
 
 }
@@ -146,7 +188,7 @@
     } else {
         textColor = [UIColor blackColor];
     }
-    [self.nextKeyboardButton setTitleColor:textColor forState:UIControlStateNormal];
+    //[self.nextKeyboard setTitleColor:textColor forState:UIControlStateNormal];
 }
 
 @end

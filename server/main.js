@@ -30,12 +30,22 @@ io.sockets.on('connection', function(socket, aaa){
   });
 
 
-  socket.on('joinRoom', function (room) {
-  	console.log("join room", room);
-    socket.join(room);
+  socket.on('joinRoom', function (roomName) {
+    socket.join(roomName);
+    socket.emit('roomJoined', {room: roomName, data: "room joined"});
+
+    var clients = io.sockets.clients(roomName);
+    console.log("join room:" +roomName+ ", now connection:" + clients.length);
   });
 
-
+   socket.on('leaveRoom', function (roomName) {
+       socket.leave(roomName);
+       socket.emit('roomLeft', {room: roomName, data: "room left"});
+       
+       var clients = io.sockets.clients(roomName);
+       console.log("leave room:" +roomName+ ", now connection:" + clients.length);
+   });
+    
 
   socket.on('sendMsg', function (param) {
   	console.log("sendMsg to room", param.room);
